@@ -24,3 +24,51 @@ flowchart LR
 ```
 
 
+```mermaid
+---
+title: Database Outline
+---
+classDiagram
+  class Authorities {
+    email
+    authorities
+  }
+  class Customer {
+    email
+    firstName
+    lastName
+    password
+    enabled
+    cartId(FK)
+  }
+  class Cart {
+    id
+    totalPrice
+  }
+  class OrderItem {
+    id
+    quantity
+    price
+    menuItem_id(FK)
+    cart_id(FK)
+  }
+  class MenuItem {
+    id
+    name
+    price
+    description
+    restaurant_id(FK)
+  }
+  class Restaurant {
+    id
+    address
+    name
+    phone
+    imageUrl
+  }  
+  Cart -- "1 : n" OrderItem
+  Restaurant -- "1 : n" MenuItem
+  Customer -- "1 : 1" Cart 
+  OrderItem -- "n : 1" MenuItem
+```
+
