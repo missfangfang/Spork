@@ -1,12 +1,24 @@
 package com.laioffer.spork.entity;
 
+import javax.persistence.CascadeType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 public class Customer {
 
     private String email;
+
     private String firstName;
+
     private String lastName;
+
     private String password;
+
     private boolean enabled;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
+    private Cart cart;
 
     public String getEmail() {
         return email;
@@ -46,6 +58,14 @@ public class Customer {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }
 
