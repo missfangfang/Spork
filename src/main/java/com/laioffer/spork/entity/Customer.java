@@ -1,11 +1,18 @@
 package com.laioffer.spork.entity;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import java.io.Serializable;
 
-public class Customer {
+@Entity
+@Table(name = "customers")
+public class Customer implements Serializable {
 
+    @Id
     private String email;
 
     private String firstName;
