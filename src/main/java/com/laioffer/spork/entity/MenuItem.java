@@ -26,7 +26,7 @@ public class MenuItem implements Serializable {
     private String imageUrl;
 
     @ManyToOne
-    @JsonIgnore // removes duplicated restaurant information in the json returned
+    @JsonIgnore // 1) removes redundant restaurant information in the json returned, 2) prevents infinite loop
     private Restaurant restaurant;
 
     public int getId() {

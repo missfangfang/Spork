@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.sql.DataSource;
@@ -13,7 +15,7 @@ import java.util.Properties;
 @EnableWebMvc
 public class ApplicationConfig {
 
-    @Bean(name = "sessionFactory")
+    @Bean
     public LocalSessionFactoryBean sessionFactory() {
         String PACKAGE_NAME = "com.laioffer.spork.entity";
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
@@ -23,7 +25,7 @@ public class ApplicationConfig {
         return sessionFactory;
     }
 
-    @Bean(name = "dataSource")
+    @Bean
     public DataSource dataSource() {
         String RDS_ENDPOINT = "database-spork.c2luiwadhule.us-east-1.rds.amazonaws.com";
         String USERNAME = "admin";
@@ -35,6 +37,11 @@ public class ApplicationConfig {
         dataSource.setPassword(PASSWORD);
 
         return dataSource;
+    }
+
+    @Bean
+    public PasswordEncoder getPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     private final Properties hibernateProperties() {
