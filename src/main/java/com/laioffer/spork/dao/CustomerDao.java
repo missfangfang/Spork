@@ -11,8 +11,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class CustomerDao {
 
-    @Autowired
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
+
+    public CustomerDao(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     public void signUp(Customer customer) {
         Authorities authorities = new Authorities();
