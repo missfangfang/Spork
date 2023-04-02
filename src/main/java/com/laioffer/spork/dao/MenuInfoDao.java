@@ -4,7 +4,6 @@ import com.laioffer.spork.entity.MenuItem;
 import com.laioffer.spork.entity.Restaurant;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaBuilder;
