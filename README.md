@@ -1,5 +1,3 @@
-<img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/301635369_463436085796753_3762222909261700207_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UkaRt_ysAL4AX_17kAT&_nc_ht=scontent-sjc3-1.xx&oh=00_AfCUj53IXoDaV9a-lnk3ifLm2M5UkkMSbYFErBTqx_MUUQ&oe=640867F9" width="100" height="100" align="top"> 
-
 # Spork
 
 ```mermaid
